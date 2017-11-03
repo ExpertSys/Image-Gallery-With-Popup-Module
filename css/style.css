@@ -1,0 +1,167 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans", sans-serif;
+}
+
+body{
+    background: url("../images/bg.png");
+    width: 100%;
+    height: 1000px;
+    position: relative;
+}
+
+.container{
+
+}
+
+.container .gallery{
+    margin: 0 auto;
+    margin-top: 50px;
+    width: 95%;
+    max-width: 1400px;
+    height: 1000px auto;
+    background:#1A2223;
+    position: relative;
+    text-align: center;
+    padding-bottom: 550px;
+}
+
+.image{
+    position: relative;
+    max-width: 356px;
+    height: 200px;
+    padding: 3% 1% 0 1%;
+
+    display: inline-block;
+}
+
+.gallery .image img{
+    width: 356px;
+    height: 200px;
+    user-select: none;
+    -webkit-user-drag: none;
+
+}
+.image-border{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index:0;
+}
+
+.gallery .image-border::after{
+    content: '';
+    width: 0;
+    height: 0;
+    position: absolute;
+    bottom: -1.5px;
+    right:0px;
+    z-index:2;
+    border-top: 75px solid transparent;
+	  border-left: 80px solid #fff;
+	  border-bottom: 2px solid transparent;
+    transform: scaleX(-1) rotate(0.5deg);
+
+}
+
+.star{
+    height: 20px;
+    width: 30px;
+    background: url("../images/fav.png");
+    float: left;
+    position: absolute;
+    bottom:13px;
+    right: 10px;
+    z-index:3;
+}
+
+.star_selected{
+    visibility: hidden;
+    height: 20px;
+    width: 30px;
+    background: url("../images/fav_selected.png");
+    float: left;
+    position: absolute;
+    bottom:13px;
+    right: 10px;
+    z-index:3;
+}
+
+.star:hover + .star_selected{
+    visibility: visible;
+}
+
+.image-border:hover .star_selected{
+    visibility: visible;
+}
+
+.gallery span:first-child{
+    float: right;
+    position: absolute;
+    right: 70px;
+    color:#8dacb6;
+    font-family: "Open Sans", sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding-right: 90px;
+    padding-top: 0px;
+}
+
+.modal{
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    position:fixed;
+    top: 0;
+    left: 0;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+    overflow: auto;
+}
+
+.modal-image{
+    width: 80%;
+    max-width: 700px;
+    display: block;
+    margin: auto;
+}
+
+#caption{
+    margin:auto;
+    width: 80%;
+    max-width: 700px;
+    color:#ccc;
+    display: block;
+    padding-top: 20px;
+    height: 100px;
+}
+
+.close{
+    position: absolute;
+    float: right;
+    top:0;
+    right: 100px;
+    color:#ccc;
+    font-size: 50px;
+}
+
+.close:hover{
+    cursor: pointer;
+}
+
+.item-number{
+    position: absolute;
+    float: left;
+    top:0;
+    left: 100px;
+    color:#ccc;
+    font-size: 50px;
+}
+.image:hover{
+    cursor: pointer;
+    opacity: 0.8;
+}
